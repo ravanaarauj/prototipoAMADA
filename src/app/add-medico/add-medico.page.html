@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Médico</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Matrícula</ion-label>
+      <ion-input [(ngModel)]="matricula"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Especialidade</ion-label>
+      <ion-input [(ngModel)]="especialidade"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" shape="round" (click)="salvar()">Salvar</ion-button>
+  <ion-button expand="block" shape="round" color="danger" [routerLink]="['/medico']" >Cancelar</ion-button>
+</ion-content>

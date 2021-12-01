@@ -1,0 +1,36 @@
+<ion-content class="swiper-no-swiping" style="background-color: #004d00;">
+  <div class="container top">
+    <img src="../../assets/imagens/amada-branco2.png" width="65%" height="65%">
+  </div>
+   <ion-slides>
+    <ion-slide>
+      <div class="slide-inner ion-padding" style="background-color: #738d7333;">
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="email" [(ngModel)]="login" placeholder=" Login"></ion-input>
+          <ion-icon name="person-outline"></ion-icon>
+        </ion-item>
+
+        <ion-item class="ion-margin-top" lines="none">
+          <ion-input type="password" [(ngModel)]="senha" placeholder=" Senha"></ion-input>
+          <ion-icon name="lock-closed-outline"></ion-icon>
+        </ion-item>
+
+        <ion-button class="ion-margin-top" (click)="acessar()" color="light" expand="block">
+          Acessar
+        </ion-button>
+      </div>
+    </ion-slide>
+  </ion-slides>
+
+  <div class="ocean">
+    <div class="waves" [ngStyle]="{'background-position-x': wavesPosition + 'px'}"></div>
+
+    <div class="container bottom ion-text-center">
+      <span>Procure a Unidade de Saúde para se cadastrar no App</span>
+    </div>
+    <div class="footer">
+      <img src="../../assets/imagens/logo-PMA.png" width="50%" height="60%">
+    </div>
+  </div>
+</ion-content>

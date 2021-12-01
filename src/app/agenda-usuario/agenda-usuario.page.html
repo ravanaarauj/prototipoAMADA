@@ -1,0 +1,47 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Agenda</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <ion-chip outline color="primary" (click)="consultar()">
+      <ion-label>Solicitadas</ion-label>
+    </ion-chip>
+  
+    <ion-chip outline color="warning" (click)="consultarConfirmadas()">
+      <ion-label>Confirmadas</ion-label>
+    </ion-chip>
+
+    <ion-chip outline color="danger" (click)="consultarExcluidas()">
+      <ion-label>Excluídos</ion-label>
+    </ion-chip>
+  </div>
+
+  <div>
+    <ion-card color="light">
+      <ion-card-content>
+        <h1>{{ titulo }}</h1>
+      </ion-card-content>
+    </ion-card>
+  </div>
+
+  <ion-card *ngFor="let item of agenda;" >
+    <ion-card-header>
+      <ion-card-subtitle>Paciente: {{ item.paciente }}</ion-card-subtitle>
+      <ion-card-title>Data: {{ item.data }}</ion-card-title>
+      <ion-card-title>Hora: {{ item.hora }}</ion-card-title>
+      <ion-card-title>Medico: {{ getMedico(item.medico) }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Status da marcação: {{ item.status }}
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

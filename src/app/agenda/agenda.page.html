@@ -1,0 +1,65 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Confirmar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <div>
+    <ion-chip outline color="primary" (click)="consultar()">
+      <ion-label>Em Aberto</ion-label>
+    </ion-chip>
+
+    <ion-chip outline color="warning" (click)="consultarConfirmadas()">
+      <ion-label>Confirmadas</ion-label>
+    </ion-chip>
+
+    <ion-chip outline color="danger" (click)="consultarExcluidos()">
+      <ion-label>Excluidas</ion-label>
+    </ion-chip>
+
+    <ion-grid>
+      <ion-row>
+        <ion-col size="10">
+          <ion-input [(ngModel)]="data" type="date"></ion-input>
+        </ion-col>
+        <ion-col>
+
+          <ion-button class="ion-align-items-end" (click)="getData()">
+            <ion-icon name="search"></ion-icon>
+          </ion-button>
+
+        </ion-col>
+      </ion-row>
+    </ion-grid>    
+
+    <ion-card>
+      <ion-card-content>
+        <h1>{{ titulo }}</h1>
+      </ion-card-content>
+    </ion-card>
+    
+  </div>
+
+  <ion-card *ngFor="let item of agenda;">
+    <ion-card-header>
+      <ion-card-subtitle>Paciente: {{ item.paciente }}</ion-card-subtitle>
+      <ion-card-title>Medico: {{ getMedico(item.medico) }}</ion-card-title>
+      <ion-card-title>Hora: {{ item.hora }}</ion-card-title>
+      <ion-card-title>Data: {{ item.data }}</ion-card-title>
+      <ion-card-title>Status: {{ item.status }}</ion-card-title>
+    </ion-card-header>
+
+    <ion-card-content>
+      <ion-button *ngIf="titulo=='Em Aberto'" color="success" (click)="confirmar(item)">Confirmar</ion-button>
+      <ion-button *ngIf="titulo=='Confirmadas'||titulo=='Excluídas'" color="primary" (click)="cancelar(item)">Cancelar
+      </ion-button>
+      <ion-button *ngIf="titulo=='Em Aberto'" color="danger" (click)="excluir(item)">Excluir</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>

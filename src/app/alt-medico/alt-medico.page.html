@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Alterar</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card>
+
+    <ion-card-header>
+      <ion-card-subtitle>{{ medico.especialidade }}</ion-card-subtitle>
+      <ion-card-title>{{ medico.id }} - {{ medico.nome }}</ion-card-title>
+      <ion-button (click)="presentAlertDias()">Adicionar</ion-button>
+    </ion-card-header>
+
+    <ion-card-content>
+
+
+      <table>
+        <thead>
+          <tr>
+            <th>Dia</th>
+            <th>Exclusivo</th>
+            <th>Ação</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let item of medico.atendimento">
+            <td>{{ item.dia }}</td>
+            <td>
+              <span *ngIf="item.exclusivo">{{ item.exclusivo }}</span>
+            </td>
+            <td>
+              <span *ngIf="!item.exclusivo">
+                <ion-button *ngIf="item.dia != ''" (click)="presentAlertExclusivo(item.dia)" slot="end">+E</ion-button>
+              </span>
+              <ion-button *ngIf="item.dia != ''" (click)="remover(item.dia)" color="danger" slot="end">
+                <ion-icon name="trash"></ion-icon>
+              </ion-button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+    </ion-card-content>
+
+  </ion-card>
+
+</ion-content>

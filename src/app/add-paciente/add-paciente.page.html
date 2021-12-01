@@ -1,0 +1,29 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Paciente</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-list>
+    <ion-item>
+      <ion-label position="floating">Nome</ion-label>
+      <ion-input [(ngModel)]="nome"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Login</ion-label>
+      <ion-input [(ngModel)]="login"></ion-input>
+    </ion-item>
+    <ion-item>
+      <ion-label position="floating">Senha</ion-label>
+      <ion-input [(ngModel)]="senha"></ion-input>
+    </ion-item>
+  </ion-list>
+
+  <ion-button expand="block" shape="round" (click)="salvar()">Salvar</ion-button>
+  <ion-button expand="block" shape="round" color="danger" [routerLink]="['/paciente']" >Cancelar</ion-button>
+</ion-content>

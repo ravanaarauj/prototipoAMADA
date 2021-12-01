@@ -1,0 +1,70 @@
+.container {
+    position: absolute;
+    left: 0;
+    right: 0;
+    width: 75%;
+    margin: 0 auto;
+    z-index: 2;
+    text-align: center;
+    
+
+    &.top {
+        top: 5%;
+    }
+
+    &.bottom {
+        bottom: 50%;
+
+        span {
+            color: rgba(255, 255, 255, 0.292);
+        }
+    }
+}
+
+ion-slides {
+    height: 100%;
+
+    .slide-inner {
+        width: 80%;
+        color: rgba(255, 255, 255, 0.774);
+        background-color: #154d12c0;
+        border-radius: 20px;
+        
+
+        ion-item {
+            --background: rgba(248, 245, 245, 0.329);
+            --border-radius: 10px;
+
+            ion-input {
+                --color: rgb(248, 245, 245, 0.329);
+            }
+        }
+    }
+}
+
+.ocean {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    height: 45%;
+    background-color: #004d00;
+
+    .waves {
+        position: absolute;
+        top: -500px;
+        left: 0;
+        right: 0;
+        height: 600px;
+        //background-image: url('../../assets/imagens/icon.png');
+        background-size: contain;
+        transition: all 0.2s;
+        background-color: #004d00;
+    }
+    .footer {
+        display: flex;
+        justify-content: center;
+        margin-top: 60%;
+        margin-right: 16px;
+    }
+}

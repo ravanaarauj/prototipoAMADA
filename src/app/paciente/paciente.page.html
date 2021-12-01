@@ -1,0 +1,30 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Pacientes</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-fab vertical="top" horizontal="end" slot="fixed">
+    <ion-fab-button [routerLink]="['/add-paciente']">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-card *ngFor="let item of pacientes" >
+    <ion-card-header>
+      <ion-card-subtitle>{{ item.nome }}</ion-card-subtitle>
+      <ion-card-title>{{ item.perfil }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      <ion-button [routerLink]="['/add-paciente']" [queryParams]="{ id: item.id}" color="primary">Alterar</ion-button>
+    </ion-card-content>
+  </ion-card>
+
+
+</ion-content>

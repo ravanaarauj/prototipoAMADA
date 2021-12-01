@@ -1,0 +1,25 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>Consultas</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-card *ngFor="let item of consultas" >
+    <ion-card-header>
+      <ion-card-subtitle>Prontuario: {{ item.prontuario }}</ion-card-subtitle>
+      <ion-card-title>Objetivo: {{ item.objetivo }}</ion-card-title>
+    </ion-card-header>
+  
+    <ion-card-content>
+      Pressão: <p>{{ item.pressao_arterial }}</p>
+      F. Cardiaca: <p>{{ item.frequencia_cardiaca }}</p>
+      Temperatura: <p>{{ item.temperatura }}</p>      
+    </ion-card-content>
+  </ion-card>
+
+</ion-content>
